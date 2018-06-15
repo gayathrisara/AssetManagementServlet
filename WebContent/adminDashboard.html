@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>ASSET MANAGEMENT</title>
+
+
+
+<!-- ------------ navbar , panel & datatable css file ---------------------------- -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+ <link href="nav&pan/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+ <link href="nav&pan/css/bootstrap.min2.css" rel="stylesheet" type="text/css">
+ <link href="nav&pan/css/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css">
+ <link href="nav&pan/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+ <link href="nav&pan/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
+
+<!-- ---------------------------------------------------------------------------- -->
+<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<!-- ------------ navbar , panel & datatable js file ---------------------------- -->
+
+ <script src="nav&pan/js/angular-ui-utils.min.js"></script>
+ <script src="nav&pan/js/angular.min.js"></script>
+ <script src="nav&pan/js/dataTables.bootstrap.min.js"></script>
+ <script src="nav&pan/js/jquery-2.2.4.min.js"></script>
+ <script src="nav&pan/js/jquery.dataTables.min.js"></script>
+ <script src="nav&pan/js/ui-bootstrap-tpls.min.js"></script>
+ <script src="nav&pan/js/bootstrap.min.js"></script>
+ <script src="nav&pan/js/jquery.min.js"></script>
+ <script src="nav&pan/js/jdatatable1.js"></script>
+ <script src="nav&pan/js/jquery.dataTables2.min.js"></script>
+
+<!-- ---------------------------------------------------------------------------- -->
+
+
+
+
+<style>
+
+body
+{
+  background-image:url("image/img1.jpg");
+  background-color:white;
+  font-size:20px;
+  background-size:100%;
+}
+
+.navbar 
+{
+  min-height: 45px;
+}
+
+.navbar-brand 
+{
+  padding: 0 35px;
+  height: 45px;
+  line-height: 45px;
+  font-size:30px;
+}
+
+.navbar-toggle 
+{
+  /* (80px - button height 34px) / 2 = 23px */
+  margin-top: 20px;
+  padding: 25px 25px;
+  font-color:white;
+}
+
+@media (min-width: 500px) {
+  .navbar-nav > li > a {
+    /* (80px - line-height of 27px) / 2 = 26.5px */
+    }}
+
+#divid
+{
+padding-left:25px;
+padding-right:25px;
+}
+#dashHard
+{
+background-color:pink;
+margin-top:30px;
+margin-bottom:30px;
+text-align:center;
+padding:5px;
+}
+#dashSoft
+{
+background-color:lightblue;
+margin-top:30px;
+margin-bottom:30px;
+text-align:center;
+padding:5px;
+}
+#dashOs
+{
+background-color:lightgray;
+margin-top:30px;
+margin-bottom:30px;
+text-align:center;
+padding:5px;
+}
+#dashEmp
+{
+background-color:lightgreen;
+margin-top:30px;
+margin-bottom:30px;
+text-align:center;
+padding:5px;
+}
+#dashReq{
+background-color:#ffb366;
+margin-top:30px;
+margin-bottom:30px;
+text-align:center;
+padding:5px;
+}
+#dashCom{
+background-color:#e699ff;
+margin-top:30px;
+margin-bottom:30px;
+text-align:center;
+padding:5px;
+}
+#detailId1
+{
+background-color:#ffff99;
+text-align:center;
+margin-top:30px;
+margin-bottom:30px;
+margin-right:20px;
+margin-left:30px;
+padding:5px;
+}
+
+#detailId2
+{
+background-color:#ffff99;
+text-align:center;
+margin-top:30px;
+margin-bottom:30px;
+margin-right:30px;
+margin-left:20px;
+padding:5px;
+}
+
+
+</style>
+
+<script type="text/javascript">
+
+	
+
+$(document).ready(function(){
+	
+	var comCnt=0,softCnt=0,hardCnt=0,osCnt=0,empCnt=0,reqCnt=0,reqReq=0,reqAcc=0,reqRej=0,comCom=0,comIn=0,comView=0,comSol=0;
+	
+	var style="column",theme="light1";
+		
+	$.get("AdminDashboard",
+			 async = true,
+			function(result){
+			$.each(result,function(key,value){
+				
+				if(key=="Record"){
+					
+					$.each(value,function(i,j){
+						
+						comCnt=j.comCnt;
+						//alert(comCnt);
+						softCnt=j.softCnt;
+						//alert(softCnt);
+						hardCnt=j.hardCnt;
+						//alert(hardCnt);
+						osCnt=j.osCnt;
+						//alert(osCnt);
+						empCnt=j.empCnt;
+						//alert(empCnt);
+						reqCnt=j.reqCnt;
+						//alert(reqCnt);
+						
+						reqReq=j.reqReq;
+						reqAcc=j.reqAcc;    
+						reqRej=j.reqRej;
+						
+						comCom=j.comCom;
+						comIn=j.comIn;
+						comView=j.comView;
+						comSol=j.comSol;
+						
+					});
+					
+					$("#dashCom").append('<h1>'+comCnt+'</h1><h5>Complainted : '+comCom+'</h5><h5>Viewed : '+comView+'</h5><h5>In Progress : '+comIn+'</h5><h5>Solved : '+comSol+'</h5>');
+					$("#dashSoft").append('<h1>'+softCnt+'</h1>');					
+					$("#dashHard").append('<h1>'+hardCnt+'</h1>');
+					$("#dashOs").append('<h1>'+osCnt+'</h1>');
+					$("#dashEmp").append('<h1>'+empCnt+'</h1>');
+					$("#dashReq").append('<h1>'+reqCnt+'</h1><h5>Requested : '+reqReq+'</h5><h5>Accepeted : '+reqAcc+'</h5><h5>Rejected : '+reqRej+'</h5>');
+					
+					
+					
+				}
+			
+				
+			});
+			
+			
+			////////////////////////
+			
+			$("#styleid").on('change',function(){
+		    style=this.value;
+			//alert(style);
+			/* alert("hard "+hardCnt);
+			alert("soft "+softCnt);
+			alert("os "+osCnt);
+			alert("req "+reqCnt);
+			alert("com "+comCnt);
+			alert("emp "+empCnt); */
+			var chart = new CanvasJS.Chart("chartContainer", {
+				theme: "light1",//""+theme+"", //"light1","light2", "dark1", "dark2"
+				animationEnabled: true, // change to true	or false	
+				title:{
+					text: ""//Basic Column Chart
+				},
+				data: [
+
+				{
+					// Change type to "column",""bar", "area", "spline", "pie",etc.
+					type: ""+style+"",//"pie",
+					dataPoints: [
+						{ label: "hardware",  y: hardCnt },
+						{ label: "software", y: softCnt  },
+						{ label: "os", y: osCnt  },
+						{ label: "employee",  y: empCnt  },
+						{ label: "complaints",  y: comCnt },
+						{ label: "requests", y: reqCnt  }
+					]
+				}
+				]
+			});
+			chart.render();
+			
+			
+			});
+			///////////
+			
+			/* $("#theme").on('change',function(){
+				theme=this.value;
+		    	//alert(theme);
+				//alert(empCnt);
+			var chart = new CanvasJS.Chart("chartContainer", {
+				theme: ""+theme+"", //"light1","light2", "dark1", "dark2"
+				animationEnabled: true, // change to true	or false	
+				title:{
+					text: ""//Basic Column Chart
+				},
+				data: [
+				{
+					// Change type to "column",""bar", "area", "spline", "pie",etc.
+					type: ""+style+"",//"pie",
+					dataPoints: [
+						{ label: "hardware",  y:""+hardCnt+"" },
+						{ label: "software", y: ""+softCnt+""  },
+						{ label: "os", y: ""+osCnt+""  },
+						{ label: "employee",  y: ""+empCnt+""  },
+						{ label: "complaints",  y: ""+comCnt+""  },
+						{ label: "requests", y: ""+reqCnt+""  }
+					]
+				}
+				]
+			});
+			chart.render();
+			
+			});
+			 */
+		
+			
+			////////////////////////////
+					
+			
+		
+	});
+	/////////////////////////////////////////////////////////////
+	
+	$("#typereq").on('change',function(){
+		$("#nameid").empty();
+		var name=this.value;
+		//alert(name);
+		/* ******************************************************************** */
+		if(name=="hardware"){
+			//alert("this is hardware");
+			$.get("ViewHardDet",function(result){
+				$.each(result,function(key,value){
+					if(key=="Record")
+						{
+						$.each(value,function(i,j){
+						//	alert(j.hardId);
+							var row='<option value='+j.hardId+'>'+j.hardId+'</option>';
+							$("#nameid").append(row);
+						});
+						}
+				});				
+			});
+			
+			 $("#nameid").on('change',function(){		
+				var id=this.value;
+				$("#detailId1").empty();
+				//alert(id);
+				$.get("ViewHardDet",function(result){
+					$.each(result,function(key,value){
+						if(key=="Record")
+							{
+							$.each(value,function(i,j){
+								if(j.hardId==id){
+									$("#detailId1").append(
+												
+											'<h3>DETAILS</h3><h4>Category : '+j.hardCat+'</h4><h4>Brand : '+j.hardBrand+'</h4><h4>Description : '+j.hardDes+'</h4><h4>Stock : '+j.hardStock+'</h4>'
+											
+									);
+								}
+								
+							});
+							}
+					});				
+				}); 
+			}); 
+		}
+		/* ****************************************************************************************** */
+		
+		if(name=="software"){
+			//alert("this is hardware");
+			$.get("ViewSoftDet",function(result){
+				$.each(result,function(key,value){
+					if(key=="Record")
+						{
+						$.each(value,function(i,j){
+						//	alert(j.hardId);
+							var row='<option value='+j.softId+'>'+j.softId+'</option>';
+							$("#nameid").append(row);
+						});
+						}
+				});				
+			});
+			
+			 $("#nameid").on('change',function(){		
+				var id=this.value;
+				$("#detailId1").empty();
+				//alert(id);
+				$.get("ViewSoftDet",function(result){
+					$.each(result,function(key,value){
+						if(key=="Record")
+							{
+							$.each(value,function(i,j){
+								if(j.softId==id){
+									$("#detailId1").append(
+												
+											'<h3>DETAILS</h3><h4>Name : '+j.softName+'</h4><h4>Version : '+j.softVer+'</h4><h4>License Provider : '+j.softLice+'</h4><h4>Platform : '+j.softPlat+'</h4><h4>Available : '+j.softAvl+'</h4>'
+											
+									);
+								}
+								
+							});
+							}
+					});				
+				}); 
+			}); 
+		}
+		/* ****************************************************************************************** */
+		if(name=="opsys"){
+			//alert("this is hardware");
+			$.get("ViewOpSysDet",function(result){
+				$.each(result,function(key,value){
+					if(key=="Record")
+						{
+						$.each(value,function(i,j){
+						//	alert(j.hardId);
+							var row='<option value='+j.osId+'>'+j.osId+'</option>';
+							$("#nameid").append(row);
+						});
+						}
+				});				
+			});
+			
+			 $("#nameid").on('change',function(){		
+				var id=this.value;
+				$("#detailId1").empty();
+				//alert(id);
+				$.get("ViewOpSysDet",function(result){
+					$.each(result,function(key,value){
+						if(key=="Record")
+							{
+							$.each(value,function(i,j){
+								if(j.osId==id){
+									$("#detailId1").append(
+												
+											'<h3>DETAILS</h3><h4>Type : '+j.osType+'</h4><h4>Version : '+j.osVer+'</h4><h4>License Provider : '+j.osLice+'</h4><h4>Available : '+j.osAvl+'</h4>'
+											
+									);
+								}
+								
+							});
+							}
+					});				
+				}); 
+			}); 
+		}
+		/* ****************************************************************************************** */
+		
+		
+		
+	});
+	//////////////////////////////////////////////////////////////////
+	$("#empid").on('change',function(){
+		var id=this.value;
+		$("#detailId2").empty();
+		//alert(id);
+		$.get("ViewEmpDet",function(result){
+			$.each(result,function(key,value){
+				if(key=="Record")
+					{
+					$.each(value,function(i,j){
+						
+						if(j.empId==id){
+							$("#detailId2").append(
+									
+								'<h3>DETAILS</h3><h4>Name : '+j.empName+'</h4><h4>Date-Of-Birth : '+j.empDob+'</h4><h4>Mobile No. : '+j.empMobile+'</h4><h4>Date-Of-Join : '+j.empDoj+'</h4><h4>Mail Id : '+j.empMail+'</h4><h4>Address : '+j.empAdrs+'</h4><h4>Salary : '+j.empSal+'</h4>'
+									
+							);
+							
+						}
+					});
+					
+					
+					
+					}
+				
+			});
+			
+		});
+		
+		
+		
+	});
+	//////////////////////////////////////////////////////////////////
+	$("#empid").empty();
+	$.get("ViewEmpDet",function(result){
+		$.each(result,function(key,value){
+			if(key=="Record")
+				{
+				$.each(value,function(i,j){
+					var row='<option value='+j.empId+'>'+j.empId+'</option>';
+					$("#empid").append(row);
+				});
+				
+				}
+		});
+		
+		
+		
+	});
+	/////////////////////////////////////////////////////////////////
+	
+});
+
+</script>
+
+
+</head>
+
+
+<body>
+
+
+<!-- navbar----------------------------------------------------------------------------------- -->
+
+<nav class="navbar navbar-inverse">
+<div class="container-fluid">
+
+	<!-- ------------------------------------------------------------------------------ -->
+
+    <div class="navbar-header">
+	
+	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+    </button>
+    
+     <a class="navbar-brand" href="#">Asset Management</a>
+	
+	</div>
+	
+	<!-- ------------------------------------------------------------------------------ -->
+	
+	<div id="navbar" class="navbar-collapse collapse">
+	
+	 <ul class="nav navbar-nav navbar-right">
+	 
+	 <li class="active"><a href="#">Home</a></li>
+	 <li><a href="#">About</a></li>
+     <li><a href="adminRequest.html">Requests</a></li>
+     
+     <li><a href="adminComplaint.html">Complaints</a></li>
+     
+     <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administrator <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="ViewEmployee.html">Employee Profile</a></li>
+            <li><a href="ViewHardware.html">Hardware Details</a></li>
+            <li><a href="ViewSoftware.html">Software Details</a></li>
+            <li><a href="ViewOpSys.html">OS Details</a></li>
+           <!-- <li role="separator" class="divider"></li> --> 
+          </ul>
+      </li>
+     
+     <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Assets <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="adminEmployee.html">Employee</a></li>
+            <li><a href="adminHardware.html">Hardware</a></li>
+            <li><a href="adminSoftware.html">Software</a></li>
+            <li><a href="adminOpSys.html">OS</a></li>
+           <!-- <li role="separator" class="divider"></li> --> 
+          </ul>
+      </li>
+      
+      <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="index.html">Logout <i class="fa fa-sign-out" style="font-size:20px"></i></a></li>
+          </ul>
+      </li>
+      
+      
+	 
+	 </ul>
+	
+	</div>
+	
+	<!-- ------------------------------------------------------------------------------ -->
+	
+</div>
+</nav>
+
+
+
+<!-- panel ------------------------------------------------------------------------------------------ -->
+
+
+
+<div class="container">
+<br>
+<div class="row" id="divid">
+
+<div class="col-sm-12">
+
+<div class="panel panel-default" style="width:100%;">
+	
+	<!-- ------------panel heading-------------- -->
+
+	<div class="panel-heading">Dashboard</div>
+
+    <!-- ------------panel body-------------- -->
+	
+	<div class="panel-body" ></div>	
+	
+	<div class="row">
+	<div class="col-sm-2"></div>
+	<div class="col-sm-3" id="dashHard">
+	<div class="statistic"><h4>Total Hardware</h4></div>
+	<!-- <h4>Total Hardware</h4> -->
+	<!-- <h1>345</h1> -->
+	
+	</div>
+	<div class="col-sm-2"></div>
+	<div class="col-sm-3" id="dashSoft">
+	
+	<h4>Total Software</h4>
+	<!-- <h1>345</h1> -->
+	
+	</div>
+	<div class="col-sm-2"></div>
+	</div>
+	
+	<div class="row">
+	<div class="col-sm-2"></div>
+	<div class="col-sm-3" id="dashOs">
+	
+	<h4>Total Operating System</h4>
+	<!-- <h1>345</h1> -->
+	
+	</div>
+	<div class="col-sm-2"></div>
+	<div class="col-sm-3" id="dashEmp">
+	
+	<h4>Total Employee</h4>
+	<!-- <h1>345</h1> -->
+	
+	</div>
+	<div class="col-sm-2"></div>
+	</div> 
+	<div class="row">
+	<div class="col-sm-2"></div>
+	
+	<div class="col-sm-3" id="dashReq">
+	
+	<h4>Total Request</h4>
+	<!-- <h1>345</h1> -->
+	
+	</div>
+	
+	<div class="col-sm-2"></div>
+	
+	<div class="col-sm-3" id="dashCom">
+	
+	<h4>Total Complaint</h4>
+	<!-- <h1>345</h1> -->
+	
+	</div>
+	
+	<div class="col-sm-2"></div>
+	 
+	
+	</div>
+	
+	<hr style="background-color:gray;color:gray;height:1px;">
+	
+	<div class="row">
+	
+	<div class="col-sm-3 text-center">
+<div class="form-group" id="type">
+                    <label for="type" class="col-sm-5 control-label">Type</label>
+                    <div class="col-sm-7">
+                     <select name="reqType" id="typereq"  class="form-control" required>
+       					<option value="select">Select</option>
+       					<option value="hardware">Hardware</option>
+       					<option value="opsys">Operating System</option>
+       					<option value="software">Software</option>
+        			</select>
+               	 </div>
+                </div> <br>
+                </div>
+                
+           
+ 
+ <div class="col-sm-3 text-center">     
+                <div class="form-group" id="typeid">
+        		<label for="typename" class="col-sm-5 control-label">ID</label>
+        			 <div class="col-sm-7">
+        			<select name="reqTypeId" id="nameid"  class="form-control" required>  
+        			<option value="select">Select</option>          
+        			</select> 
+        			</div>
+        			<br>
+        	 </div> 
+
+ </div>
+ 
+ 
+<div class="col-sm-4 text-center">     
+                <div class="form-group" id="typeid">
+        		<label for="typename" class="col-sm-7 control-label">Employee Id</label>
+        			 <div class="col-sm-5">
+        			<select name="empId" id="empid"  class="form-control" required>  
+        			<option value="select">Select</option>          
+        			</select> 
+        			</div>
+        			<br>
+        	 </div> 
+
+ </div>
+ 
+ <div class="col-sm-5 text-center">     
+                <div class="form-group" id="empname">
+        		    		<br>
+        	 </div> 
+
+ </div>
+ 
+ 
+ 
+ 
+ </div>
+ 
+ <div class="row">
+  <div class="col-sm-6 text-center">     
+                <div class="form-group" id="detailId1">
+        		<h3>DETAILS</h3><br>
+        	 </div> 
+ </div>
+ 
+ <div class="col-sm-6 text-center">     
+                <div class="form-group" id="detailId2">
+        		<h3>DETAILS</h3><br>
+        	 </div> 
+ </div>
+
+
+
+</div>
+	
+	
+	</div>
+
+
+
+
+
+
+
+
+</div>
+
+</div>
+
+</div>
+
+<div class="container">
+<div class="panel panel-default">
+<div class="panel-heading" style="text-align:center">Graphical Representation</div>
+<div class="panel-body">
+<div class="row">
+		<div class="col-sm-2">
+		</div>
+		<div class="col-sm-8">
+		<div class="form-group" id="typeid1">
+                    <label for="type" class="col-sm-2 control-label">Style</label>
+                    <div class="col-sm-4">
+                     <select name="type" id="styleid"  class="form-control" required>
+       					<option value="select">Select</option>
+       					<option value="column">column</option>
+       					<option value="bar">bar</option>
+       					<option value="pie">pie</option>
+       					<option value="spline">spline</option>
+       					<option value="area">area</option>
+        			</select>
+               	 </div>
+                </div>
+                <br>
+                
+                
+           <div class="form-group" id="themeid1">
+                    <label for="theme" class="col-sm-2 control-label">Theme</label>
+                    <div class="col-sm-4">
+                     <select name="theme" id="theme"  class="form-control" required>
+       					<option value="select">select</option>
+       					<option value="light1">light1</option>
+       					<option value="light2">light2</option>
+       					<option value="dark1">dark1</option>
+       					<option value="dark2">dark2</option>
+        			</select>
+               	 </div>
+                </div>
+		
+		<br><br>
+		
+		
+		<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+		
+		
+		</div>
+		
+		
+		
+		<div class="col-sm-2">
+		</div>
+		
+
+
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+</body>
+</html>

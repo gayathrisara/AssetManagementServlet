@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js" type="text/javascript"></script>
+
+<script>
+  
+  $(document).ready(function(){
+	  function message() 
+	  
+	  {
+			swal({
+			    title: "WELCOME",
+			    showCancelButton: false	,
+			    confirmButtonColor: '#A9A9F5',
+			    confirmButtonText: 'START',
+			    closeOnConfirm: false
+			});
+	}
+	message();
+	  	  
+  });
+  
+  function ask(){
+	  //A title with a text under
+	  swal("Here's a message!", "It's pretty, isn't it?");
+	  
+	  //A success & error message!
+	  //swal("Good job!", "You clicked the button!", "error");
+	  
+	  //A warning message, with a function attached to the "Confirm" button...
+	  /* swal({
+		  title: "Are you sure?",
+		  text: "Your will not be able to recover this imaginary file!",
+		  type: "warning",
+		  showCancelButton: true,
+		  confirmButtonClass: "btn-danger",
+		  confirmButtonText: "Yes, delete it!",
+		  closeOnConfirm: false
+		},
+		function(){
+		  swal("Deleted!", "Your imaginary file has been deleted.", "success");
+		}); */
+	  
+	  //...and by passing a parameter, you can execute something else for "Cancel".
+	  /* swal({
+		  title: "Are you sure?",
+		  text: "You will not be able to recover this imaginary file!",
+		  type: "warning",
+		  showCancelButton: true,
+		  confirmButtonClass: "btn-danger",
+		  confirmButtonText: "Yes, delete it!",
+		  cancelButtonText: "No, cancel plx!",
+		  closeOnConfirm: false,
+		  closeOnCancel: false
+		},
+		function(isConfirm) {
+		  if (isConfirm) {
+		    swal("Deleted!", "Your imaginary file has been deleted.", "success");
+		  } else {
+		    swal("Cancelled", "Your imaginary file is safe :)", "error");
+		  }
+		}); */
+		
+		
+		//A message with a custom icon
+		
+	 /*  swal({
+		  title: "Sweet!",
+		  text: "Here's a custom image.",
+		  imageUrl: 'thumbs-up.jpg'
+		}); */
+		
+		
+		//A replacement for the "prompt" function
+		
+	  /* swal({
+		  title: "An input!",
+		  text: "Write something interesting:",
+		  type: "input",
+		  showCancelButton: true,
+		  closeOnConfirm: false,
+		  inputPlaceholder: "Write something"
+		}, function (inputValue) {
+		  if (inputValue === false) return false;
+		  if (inputValue === "") {
+		    swal.showInputError("You need to write something!");
+		    return false
+		  }
+		  swal("Nice!", "You wrote: " + inputValue, "success");
+		}); */
+		
+		//With a loader (for a AJAX requests)
+	  /* swal({
+		  title: "Ajax request example",
+		  text: "Submit to run ajax request",
+		  type: "info",
+		  showCancelButton: true,
+		  closeOnConfirm: false,
+		  showLoaderOnConfirm: true
+		}, function () {
+		  setTimeout(function () {
+		    swal("Ajax request finished!");
+		  }, 2000);
+		}); */
+		
+		
+	  
+	  
+  }  
+
+</script>
+
+<script src="swalalert/sweetalert.js"></script>
+<script src="swalalert/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="swalalert/sweetalert.css">
+
+
+</head>
+<body>
+
+<h4>Basic example</h4>
+      <div class="row">
+        <div class="col-sm-2 text-center">
+          <p><button class="btn btn-primary" type="button" onclick="ask()">Try It</button></p>
+        </div>
+        <div class="col-sm-10">
+          <pre class="code">swal("Here's a message!")</pre>
+        </div>
+      </div>
+
+
+</body>
+</html>

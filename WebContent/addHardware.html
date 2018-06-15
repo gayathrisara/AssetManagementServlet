@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>ASSET MANAGEMENT</title>
+
+
+
+<!-- ------------ navbar , panel & datatable css file ---------------------------- -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+ <link href="nav&pan/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+ <link href="nav&pan/css/bootstrap.min2.css" rel="stylesheet" type="text/css">
+ <link href="nav&pan/css/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css">
+ <link href="nav&pan/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+ <link href="nav&pan/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
+
+<!-- ---------------------------------------------------------------------------- -->
+
+<!-- ------------ navbar , panel & datatable js file ---------------------------- -->
+
+ <script src="nav&pan/js/angular-ui-utils.min.js"></script>
+ <script src="nav&pan/js/angular.min.js"></script>
+ <script src="nav&pan/js/dataTables.bootstrap.min.js"></script>
+ <script src="nav&pan/js/jquery-2.2.4.min.js"></script>
+ <script src="nav&pan/js/jquery.dataTables.min.js"></script>
+ <script src="nav&pan/js/ui-bootstrap-tpls.min.js"></script>
+ <script src="nav&pan/js/bootstrap.min.js"></script>
+ <script src="nav&pan/js/jquery.min.js"></script>
+ <script src="nav&pan/js/jdatatable1.js"></script>
+ <script src="nav&pan/js/jquery.dataTables2.min.js"></script>
+
+<!-- ---------------------------------------------------------------------------- -->
+
+
+
+
+<style>
+
+body
+{
+  background-image:url("image/img84.jpg");
+  background-size:100%;
+  background-color:white;
+  font-size:20px;
+}
+
+.navbar 
+{
+  min-height: 45px;
+}
+
+.navbar-brand 
+{
+  padding: 0 35px;
+  height: 45px;
+  line-height: 45px;
+  font-size:30px;
+}
+
+.navbar-toggle 
+{
+  /* (80px - button height 34px) / 2 = 23px */
+  margin-top: 20px;
+  padding: 25px 25px;
+  font-color:white;
+}
+
+@media (min-width: 500px) {
+  .navbar-nav > li > a {
+    /* (80px - line-height of 27px) / 2 = 26.5px */
+    }}
+
+
+
+</style>
+
+
+
+</head>
+
+
+<body>
+
+
+<!-- navbar----------------------------------------------------------------------------------- -->
+
+<nav class="navbar navbar-inverse">
+<div class="container-fluid">
+
+	<!-- ------------------------------------------------------------------------------ -->
+
+    <div class="navbar-header">
+	
+	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+    </button>
+    
+     <a class="navbar-brand" href="#">Asset Management</a>
+	
+	</div>
+	
+	<!-- ------------------------------------------------------------------------------ -->
+	
+	<div id="navbar" class="navbar-collapse collapse">
+	
+	 <ul class="nav navbar-nav navbar-right">
+	 
+	 <li><a href="adminDashboard.html">Home</a></li>
+	 <li><a href="#">About</a></li>
+     <li><a href="adminRequest.html">Requests</a></li>
+     
+     <li><a href="adminComplaint.html">Complaints</a></li>
+     
+     <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administrator <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="ViewEmployee.html">Employee Profile</a></li>
+            <li><a href="ViewHardware.html">Hardware Details</a></li>
+            <li><a href="ViewSoftware.html">Software Details</a></li>
+            <li><a href="ViewOpSys.html">OS Details</a></li>
+           <!-- <li role="separator" class="divider"></li> --> 
+          </ul>
+      </li>
+     
+     <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Assets <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="adminEmployee.html">Employee</a></li>
+            <li><a href="adminHardware.html">Hardware</a></li>
+            <li><a href="adminSoftware.html">Software</a></li>
+            <li><a href="adminOpSys.html">OS</a></li>
+           <!-- <li role="separator" class="divider"></li> --> 
+          </ul>
+      </li>
+      
+       <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="index.html">Logout <i class="fa fa-sign-out" style="font-size:20px"></i></a></li>
+          </ul>
+      </li>
+      
+	 
+	 </ul>
+	
+	</div>
+	
+	<!-- ------------------------------------------------------------------------------ -->
+	
+</div>
+</nav>
+
+
+
+<!-- panel ------------------------------------------------------------------------------------------ -->
+
+<section id="as" class="container-fluid">
+
+    <div class="row section-banner" >
+      <div class="col-md-offset-3 col-md-6 text-center">
+        <div>
+          <span class="line about"></span>
+          <span class="line about"></span>
+        </div>
+      </div>
+    </div>
+
+<br>
+    <div  class="row max" >
+	  
+       <div class="container ">
+         
+  <div class="panel panel-default">
+    <div class="panel-heading">Add Hardware</div>
+            <form class="form-horizontal" role="form" action="AddHardware" method="post">
+       <div class="panel-body">
+       
+ 
+      <div class="col-sm-6 text-center">      
+                <div class="form-group">
+                    <label for="hardId" class="col-sm-5 control-label">Hardware Id</label>
+                    <div class="col-sm-7">
+                       <input class="form-control" type="text" id="hardid" placeholder="enter Id" name="hardId" required autofocus>
+                    </div>
+                </div>
+				
+				
+                <div class="form-group">
+                    <label for="hardCat" class="col-sm-5 control-label">Category</label>
+                    <div class="col-sm-7">     
+                        <input class="form-control" type="text" id="hardcat" placeholder="enter category" name="hardCat" required autofocus>                  
+                    </div>
+                </div>
+                
+				
+				<div class="form-group">
+                    <label for="hardBrand" class="col-sm-5 control-label">Brand</label>
+                    <div class="col-sm-7">
+                        <input class="form-control" id="hardbrand" type="text" placeholder="enter brand" name="hardBrand" required autofocus>
+                    </div>
+                </div>
+      
+           </div>
+        
+      
+	  <div class="col-sm-6 " id="m">  
+	  
+                <div class="form-group">
+                    <label for="hardDes" class="col-sm-5 control-label">Description</label>
+                    <div class="col-sm-7">
+						  <input class="form-control" type="text" id="harddes" placeholder="enter Description" name="hardDes" required autofocus>
+                    </div>
+                </div>	  
+  
+                <div class="form-group">
+                    <label for="hardStock" class="col-sm-5 control-label">Stock</label>
+                    <div class="col-sm-7">
+                    	<input class="form-control" type="text" id="hardstock" placeholder="enter stock" name="hardStock" required autofocus>
+                    </div>
+                </div>
+               
+                <div class="form-group">
+                    <label for="hardWar" class="col-sm-5 control-label">Warranty</label>
+                    <div class="col-sm-7">
+                   		<input class="form-control" type="text" id="hardwar" placeholder="enter Warranty" name="hardWar" required autofocus>
+                    </div>
+                </div>
+							
+				
+                <div class="form-group">
+                    <div class="col-md-3 col-sm-offset-3">
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </div>
+                </div>
+         </div>
+		 </div>
+		 </form>
+		 </div>
+		 </div>
+</div>
+
+   
+
+  </section>
+
+</body>
+</html>

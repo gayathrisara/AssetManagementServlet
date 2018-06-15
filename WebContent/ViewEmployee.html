@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>ASSET MANAGEMENT</title>
+
+<!-- ------------ navbar , panel & datatable css file ---------------------------- -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+ <link href="nav&pan/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+ <link href="nav&pan/css/bootstrap.min2.css" rel="stylesheet" type="text/css">
+ <link href="nav&pan/css/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css">
+ <link href="nav&pan/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+ <link href="nav&pan/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
+
+<!-- ---------------------------------------------------------------------------- -->
+
+<!-- ------------ navbar , panel & datatable js file ---------------------------- -->
+
+ <script src="nav&pan/js/angular-ui-utils.min.js"></script>
+ <script src="nav&pan/js/angular.min.js"></script>
+ <script src="nav&pan/js/dataTables.bootstrap.min.js"></script>
+ <script src="nav&pan/js/jquery-2.2.4.min.js"></script>
+ <script src="nav&pan/js/jquery.dataTables.min.js"></script>
+ <script src="nav&pan/js/ui-bootstrap-tpls.min.js"></script>
+ <script src="nav&pan/js/bootstrap.min.js"></script>
+ <script src="nav&pan/js/jquery.min.js"></script>
+ <script src="nav&pan/js/jdatatable1.js"></script>
+ <script src="nav&pan/js/jquery.dataTables2.min.js"></script>
+
+
+
+<!-- jtable -->
+<link href="jtable/css/metro/blue/jtable.css" rel="stylesheet" type="text/css" />
+<link href="jtable/css/jquery-ui-1.10.3.custom.css" rel="stylesheet" type="text/css" />
+<!-- Include jTable script file. -->
+<script src="jtable/js/jquery-1.8.2.js" type="text/javascript"></script>
+<script src="jtable/js/jquery-ui-1.10.3.custom.js" type="text/javascript"></script>
+<script src="jtable/js/jquery.jtable.js" type="text/javascript"></script>
+
+
+<style>
+body
+{
+  background-image:url("image/img79.jpg");
+  background-color:white;
+  font-size:20px;
+  background-size:100%;
+}
+#employeeList
+{
+font-size:15px important;
+}
+#divmain
+{
+ font-size:15px;
+ width: 100%; 
+ border: 2px solid lightgray; 
+}
+#divid
+{
+padding-left:50px;
+padding-right:50px;
+}
+.panel
+{
+border:transparent;
+}
+
+.navbar 
+{
+  min-height: 45px;
+}
+
+.navbar-brand 
+{
+  padding: 0 35px;
+  height: 45px;
+  line-height: 45px;
+  font-size:30px;
+}
+
+.navbar-toggle 
+{
+  /* (80px - button height 34px) / 2 = 23px */
+  margin-top: 20px;
+  padding: 25px 25px;
+  font-color:white;
+}
+
+@media (min-width: 500px) {
+  .navbar-nav > li > a {
+    /* (80px - line-height of 27px) / 2 = 26.5px */
+    }}
+
+
+
+
+</style>
+
+<script type="text/javascript">
+$(document).ready(function(){	
+	debugger;
+	$('#employeeList').jtable({
+		
+		title:'Employee Details',
+		actions:{
+			listAction : 'ViewEmployee?action=list',
+			createAction : 'ViewEmployee?action=create',
+			updateAction : 'ViewEmployee?action=update',
+			deleteAction : 'ViewEmployee?action=delete'
+		},
+		
+		fields : {
+			empId : {
+				title : 'Employee Id',
+				width : '5%',
+				key : true,
+				list : true,
+				edit : false,
+				create : true
+			},
+			empName : {		
+				title : 'Name',
+				width : '5%',
+				edit : true
+			},
+			empDob : {
+				title : 'Date of Birth',
+				width : '9%',
+				edit : true
+			},
+			empGen : {
+				title : 'Gender',
+				width : '8%',
+				edit : true
+			},
+			empMobile : {			
+				title : 'Mobile No',
+				width : '8%',
+				edit : true
+			},
+			empDoj : {
+				title : 'Date_of_join',
+				width : '6%',
+				edit : true				
+			},
+			empMail : {			
+				title : 'Mail Id',
+				width : '8%',
+				edit : true
+			},
+			empSal : {			
+				title : 'Salary',
+				width : '5%',
+				edit : true
+			},
+			empAdrs : {
+				title : 'Address',
+				width : '5%',
+				edit : true
+			}
+			
+
+		}
+		
+		
+	});
+	
+	$('#employeeList').jtable('load');
+	
+});
+
+
+
+</script>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+<div class="container-fluid">
+
+	<!-- ------------------------------------------------------------------------------ -->
+
+    <div class="navbar-header">
+	
+	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+    </button>
+    
+     <a class="navbar-brand" href="#">Asset Management</a>
+	
+	</div>
+	
+	<!-- ------------------------------------------------------------------------------ -->
+	
+	<div id="navbar" class="navbar-collapse collapse">
+	
+	 <ul class="nav navbar-nav navbar-right">
+	 
+	 <li><a href="adminDashboard.html">Home</a></li>
+	 <li><a href="#">About</a></li>
+     <li><a href="adminRequest.html">Requests</a></li>
+     
+     <li><a href="adminComplaint.html">Complaints</a></li>
+     
+     <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administrator <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Employee Profile</a></li>
+            <li><a href="ViewHardware.html">Hardware Details</a></li>
+            <li><a href="ViewSoftware.html">Software Details</a></li>
+            <li><a href="ViewOpSys.html">OS Details</a></li>
+           <!-- <li role="separator" class="divider"></li> --> 
+          </ul>
+      </li>
+     
+     <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Assets <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="adminEmployee.html">Employee</a></li>
+            <li><a href="adminHardware.html">Hardware</a></li>
+            <li><a href="adminSoftware.html">Software</a></li>
+            <li><a href="adminOpSys.html">OS</a></li>
+           <!-- <li role="separator" class="divider"></li> --> 
+          </ul>
+      </li>
+      
+     <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="index.html">Logout <i class="fa fa-sign-out" style="font-size:20px"></i></a></li>
+          </ul>
+      </li>
+        
+    
+	 </ul>
+	
+	</div>
+	
+	<!-- ------------------------------------------------------------------------------ -->
+	
+</div>
+</nav>
+
+
+	<!-- Panel ------------------------------------------------------------------------------ -->
+	
+	
+	
+	<div class="container-fluid">
+<br>
+
+<div class="row" id="divid">
+<div class="col-sm-12" >
+<div class="panel panel-default" style="width:100%;background:transparent;">
+	
+	<!-- ------------panel heading-------------- -->
+
+	<!-- <div class="panel-heading" style="border:transparent;background:transparent;color:white;font-size:35px;">Employee Details</div> -->
+
+    <!-- ------------panel body-------------- -->
+	
+	<div class="panel-body" style="font-size:35px;">
+	
+	<div id="divmain">
+		<div id="employeeList"></div>
+	</div>
+	
+	
+	
+	</div>	
+
+ </div>
+
+</div>
+</div>
+
+ 
+</div>
+	
+	
+
+
+</body>
+</html>

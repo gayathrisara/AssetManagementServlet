@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>ASSET MANAGEMENT</title>
+
+
+
+<!-- ------------ navbar , panel & datatable css file ---------------------------- -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+ <link href="nav&pan/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+ <link href="nav&pan/css/bootstrap.min2.css" rel="stylesheet" type="text/css">
+ <link href="nav&pan/css/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css">
+ <link href="nav&pan/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+ <link href="nav&pan/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
+
+<!-- ---------------------------------------------------------------------------- -->
+
+<!-- ------------ navbar , panel & datatable js file ---------------------------- -->
+
+ <script src="nav&pan/js/angular-ui-utils.min.js"></script>
+ <script src="nav&pan/js/angular.min.js"></script>
+ <script src="nav&pan/js/dataTables.bootstrap.min.js"></script>
+ <script src="nav&pan/js/jquery-2.2.4.min.js"></script>
+ <script src="nav&pan/js/jquery.dataTables.min.js"></script>
+ <script src="nav&pan/js/ui-bootstrap-tpls.min.js"></script>
+ <script src="nav&pan/js/bootstrap.min.js"></script>
+ <script src="nav&pan/js/jquery.min.js"></script>
+ <script src="nav&pan/js/jdatatable1.js"></script>
+ <script src="nav&pan/js/jquery.dataTables2.min.js"></script>
+
+<!-- ---------------------------------------------------------------------------- -->
+
+
+
+
+<style>
+
+body
+{
+ 	background-color:white;
+	font-size:20px;
+	background : url("image/img19.jpg");
+	background-size:100%;
+  
+}
+
+.navbar 
+{
+  min-height: 45px;
+}
+
+.navbar-brand 
+{
+  padding: 0 35px;
+  height: 45px;
+  line-height: 45px;
+  font-size:30px;
+}
+
+.navbar-toggle 
+{
+  /* (80px - button height 34px) / 2 = 23px */
+  margin-top: 20px;
+  padding: 25px 25px;
+  font-color:white;
+}
+
+@media (min-width: 500px) {
+  .navbar-nav > li > a {
+    /* (80px - line-height of 27px) / 2 = 26.5px */
+    }}
+
+
+.panel-actions {
+  margin-top: -20px;
+  margin-bottom: 0;
+  text-align: right;
+}
+.panel-title{
+	font-size:22px;
+}
+
+/* #divid
+{
+padding-left:2px;
+padding-right:2px;
+} */
+
+</style>
+
+
+<script>
+
+
+$(document).ready(function(){
+	var id = sessionStorage.getItem("userid");
+	var uname=sessionStorage.getItem("uname");
+	var name=uname+" "+"<span class='caret'></span>";
+	$("#usser").empty();
+	$("#usser").append(name);
+	  
+	  $.get("ViewComDet?id="+id+"",
+			  async = true,
+			  function(result){
+		  $.each(result,function(key,value){
+			 
+			  if(key=="Record"){
+				  $.each(value,function(i,j){
+					  
+					  var row='<tr>'+'<td>'+j.comId+'</td>'
+					  				+'<td>'+j.empId+'</td>'
+					  				+'<td>'+j.empName+'</td>'
+					  				+'<td>'+j.comType+'</td>'
+					  				+'<td>'+j.comDesc+'</td>'
+					  				+'<td>'+j.comRecDt +'</td>'	
+					  				+'<td>'+j.comTarDt+'</td>'
+					  				+'<td>'+j.comStat+'</td>'	
+					             +'</tr>';
+					 
+					 $("#comdata").append(row);
+							/*  $('<tr>'+'<td>'+j.softId+'</td>'
+				  				+'<td>'+j.softName+'</td>'
+				  				+'<td>'+j.softVer+'</td>'
+				  				+'<td>'+j.softLice+'</td>'
+				  				+'<td>'+j.softPlat+'</td>'
+				             +'</tr>') */
+					  
+				  });
+				  
+			  }
+			  
+		  });
+		  $("#comdata").DataTable('load');
+		  
+	  });
+	  
+});
+
+</script>
+
+
+</head>
+
+
+<body>
+
+
+<!-- navbar----------------------------------------------------------------------------------- -->
+
+<nav class="navbar navbar-inverse">
+<div class="container-fluid">
+
+	<!-- ------------------------------------------------------------------------------ -->
+
+    <div class="navbar-header">
+	
+	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+    </button>
+    
+     <a class="navbar-brand" href="#">Asset Management</a>
+	
+	</div>
+	
+	<!-- ------------------------------------------------------------------------------ -->
+	
+	<div id="navbar" class="navbar-collapse collapse">
+	
+	 <ul class="nav navbar-nav navbar-right">
+	 
+	 <li><a href="employee.html">Home</a></li>
+	 
+     
+     <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Assets <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="empHardware.html">Hardware</a></li>
+            <li><a href="empSoftware.html">Software</a></li>
+            <li><a href="empOpSys.html">OS</a></li>
+           <!-- <li role="separator" class="divider"></li> --> 
+          </ul>
+      </li>
+      
+      <li><a href="empViewRequest.html">Your Requests</a></li>
+      <li><a href="empComplaint.html">Complaint</a></li>
+      <li class="active"><a href="#">Your Complaints</a></li>
+      
+      <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="usser" role="button" aria-haspopup="true" aria-expanded="false">emp <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="index.html">Logout <i class="fa fa-sign-out" style="font-size:20px"></i></a></li>
+            <li><a href="EmpProfile.html">My Profile</a></li>
+           <!-- <li role="separator" class="divider"></li> --> 
+          </ul>
+      </li>
+      
+	 </ul>
+	
+	</div>
+	
+	<!-- ------------------------------------------------------------------------------ -->
+	
+</div>
+</nav>
+
+
+
+
+
+<!-- panel ------------------------------------------------------------------------------------------ -->
+
+
+
+<div class="container-fluid">
+<br>
+<div class="row" id="divid">
+<div class="col-sm-12" >
+
+<div class="panel panel-default" style="width:100%;">
+	
+	<!-- ------------panel heading-------------- -->
+
+	<div class="panel-heading">
+    <h1 class="panel-title">Complaint Details</h1>
+	</div>
+
+
+    <!-- ------------panel body-------------- -->
+	
+	<div class="panel-body" >
+	
+	<table class="table table-bordered bordered table-striped table-condensed datatable" id="comdata"> 
+	
+	<thead>
+	<tr>
+	<th>ID</th>
+	<th>Employee ID</th>
+	<th>Name</th>
+	<th>Complaint Type</th>
+	<th>Description</th>
+	<th>Send date</th>
+	<th>Target Date</th>
+	<th>Status</th>
+	</tr>
+	</thead>
+	
+	<tfoot>
+	<tr>
+	<th>ID</th>
+	<th>Employee ID</th>
+	<th>Name</th>
+	<th>Complaint Type</th>
+	<th>Description</th>
+	<th>Send date</th>
+	<th>Target Date</th>
+	<th>Status</th>
+	</tr>
+	</tfoot>
+	
+	<tbody>	
+	</tbody>
+
+	</table>
+	
+	</div>	
+
+ </div>
+
+
+</div>
+</div>
+
+ 
+</div>
+
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>ASSET MANAGEMENT</title>
+
+
+<!-- ------------ navbar , panel & datatable css file ---------------------------- -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+ <link href="nav&pan/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+ <link href="nav&pan/css/bootstrap.min2.css" rel="stylesheet" type="text/css">
+ <link href="nav&pan/css/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css">
+ <link href="nav&pan/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+ <link href="nav&pan/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
+
+
+<!-- ---------------------------------------------------------------------------- -->
+<script src="http://tinymce.cachefly.net/4.2/tinymce.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<!-- ------------ navbar , panel & datatable js file ---------------------------- -->
+
+ <script src="nav&pan/js/angular-ui-utils.min.js"></script>
+ <script src="nav&pan/js/angular.min.js"></script>
+ <script src="nav&pan/js/dataTables.bootstrap.min.js"></script>
+ <script src="nav&pan/js/jquery-2.2.4.min.js"></script>
+ <script src="nav&pan/js/jquery.dataTables.min.js"></script>
+ <script src="nav&pan/js/ui-bootstrap-tpls.min.js"></script>
+ <script src="nav&pan/js/bootstrap.min.js"></script>
+ <script src="nav&pan/js/jquery.min.js"></script>
+ <script src="nav&pan/js/jdatatable1.js"></script>
+ <script src="nav&pan/js/jquery.dataTables2.min.js"></script>
+
+
+		<script type="text/javascrip3t" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/tinymce.min.js"></script>
+		<script type="text/javascript" src="tinymce/plugin/tinymce/init-tinymce.js"></script>
+<!-- ---------------------------------------------------------------------------- -->
+
+
+
+
+<style>
+
+body
+{
+  background-color:white;
+  font-size:20px;
+  background-size:100%;
+  background-image:url("image/img45.jpg");
+}
+
+.navbar 
+{
+  min-height: 45px;
+}
+
+.navbar-brand 
+{
+  padding: 0 35px;
+  height: 45px;
+  line-height: 45px;
+  font-size:30px;
+}
+
+.navbar-toggle 
+{
+  /* (80px - button height 34px) / 2 = 23px */
+  margin-top: 20px;
+  padding: 25px 25px;
+  font-color:white;
+}
+
+@media (min-width: 500px) {
+  .navbar-nav > li > a {
+    /* (80px - line-height of 27px) / 2 = 26.5px */
+    }}
+
+
+
+</style>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	
+		
+	var uname=sessionStorage.getItem("uname");
+	var id=sessionStorage.getItem("userid");
+	var name=uname+" "+"<span class='caret'></span>";
+	$("#usser").empty();
+	$("#usser").append(name);
+	
+	$("#empid").val(id);
+	$("#empname").val(uname);
+	
+	var now=new Date(),
+	maxDate=now.toISOString().substring(0,10);
+	$('#comrec').prop('max',maxDate);
+	$('#comtar').prop('min',maxDate);
+	
+});
+
+</script>
+</head>
+
+
+<body>
+
+
+<!-- navbar----------------------------------------------------------------------------------- -->
+
+<nav class="navbar navbar-inverse">
+<div class="container-fluid">
+
+	<!-- ------------------------------------------------------------------------------ -->
+
+    <div class="navbar-header">
+	
+	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+    </button>
+    
+     <a class="navbar-brand" href="#">Asset Management</a>
+	
+	</div>
+	
+	<!-- ------------------------------------------------------------------------------ -->
+	
+	<div id="navbar" class="navbar-collapse collapse">
+	
+	 <ul class="nav navbar-nav navbar-right">
+	 
+	 <li><a href="employee.html">Home</a></li>
+	 
+     
+     <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Assets <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="empHardware.html">Hardware</a></li>
+            <li><a href="empSoftware.html">Software</a></li>
+            <li><a href="empOpSys.html">OS</a></li>
+           <!-- <li role="separator" class="divider"></li> --> 
+          </ul>
+      </li>
+      
+      <li><a href="empViewRequest.html">Your Requests</a></li>
+      <li class="active"><a href="#">Complaint</a></li>
+      <li><a href="empViewComplaint.html">Your Complaints</a></li>
+      
+      <li class="dropdown">
+          <a href="#" id="usser" class="dropdown-toggle" data-toggle="dropdown"  role="button" aria-haspopup="true" aria-expanded="false">emp <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="index.html">Logout <i class="fa fa-sign-out" style="font-size:20px"></i></a></li>
+            <li><a href="EmpProfile.html">My Profile</a></li>
+           <!-- <li role="separator" class="divider"></li> --> 
+          </ul>
+      </li>
+      
+	 </ul>
+	
+	</div>
+	
+	<!-- ------------------------------------------------------------------------------ -->
+	
+</div>
+</nav>
+
+
+
+
+
+<!-- panel ------------------------------------------------------------------------------------------ -->
+
+
+<section id="as" class="container-fluid">
+
+    <div class="row section-banner" >
+      <div class="col-md-offset-3 col-md-6 text-center">
+        <div>
+          <span class="line about"></span>
+          <span class="line about"></span>
+        </div>
+      </div>
+    </div>
+
+<br>
+    <div  class="row max" >
+	  
+       <div class="container ">
+         
+  <div class="panel panel-default">
+    <div class="panel-heading">Complaint to Admin</div>
+            <form class="form-horizontal" role="form" action="ComplaintSend" method="post">
+       <div class="panel-body">
+       
+ 
+      <div class="col-sm-5 text-center">      
+                <div class="form-group">
+                    <label for="eempId" class="col-sm-5 control-label">Employee Id</label>
+                    <div class="col-sm-7">
+                      <input class="form-control" type="text" id="empid" readonly="readonly" name="empId" placeholder="Employee Id" autocomplete="off" required/>
+                    </div>
+                </div>
+				
+				
+                <div class="form-group">
+                    <label for="firstName" class="col-sm-5 control-label">Employee Name</label>
+                    <div class="col-sm-7">
+                      <input class="form-control" type="text" id="empname" readonly="readonly" name="empName" placeholder="Employee Name" autocomplete="off" required/>                       
+                    </div>
+                </div>
+				
+				
+       
+                <div class="form-group">
+                    <label for="gender" class="col-sm-5 control-label">Complaint Type</label>
+                    <div class="col-sm-7">
+                     <input class="form-control" type="text" id="comtype" name="comType" placeholder="Complaint type" autocomplete="off" required/>
+               	 </div>
+                </div> 
+                
+                <div class="form-group">
+        		<label for="gender" class="col-sm-5 control-label">Send Date</label>
+        			 <div class="col-sm-7">
+        			<input class="form-control" type="date" id="comrec" name="comRecDt" placeholder="Complaint send date" autocomplete="off" required/>
+        			</div>
+        	 </div> 
+        	 
+        	 <div class="form-group" >
+				<label for="gender" class="col-sm-5 control-label">Target date</label>
+				<div class="col-sm-7">
+        		<input class="form-control" type="date" id="comtar" name="comTarDt" placeholder="Complaint target date" autocomplete="off" required/>
+        		</div>
+        	</div>
+        	
+        	<br>
+        	
+        	
+				 
+           </div>
+        
+      
+	  <div class="col-sm-7 " id="m">  
+	  
+				 <div class="form-group">
+                    <label for="Address" class="col-sm-3 control-label">Description</label>
+                   <div class="col-sm-9">
+                   <textarea class="tinymce"  style="visibility: true;" name="textedit"></textarea>
+                   </div></div>
+            
+                <div class="form-group">
+                    <div class="col-md-3 col-sm-offset-3">
+                        <button type="submit" class="btn btn-primary">Send Complaint</button>
+     
+                    </div>
+            </div>
+				</div>
+				</div>
+            </form>     
+         </div>
+		 </div>
+		 
+		
+		 </div>
+		 
+
+   
+
+  </section>
+
+</body>
+
+</html>

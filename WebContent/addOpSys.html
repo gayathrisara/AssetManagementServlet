@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>ASSET MANAGEMENT</title>
+
+
+
+<!-- ------------ navbar , panel & datatable css file ---------------------------- -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+ <link href="nav&pan/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+ <link href="nav&pan/css/bootstrap.min2.css" rel="stylesheet" type="text/css">
+ <link href="nav&pan/css/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css">
+ <link href="nav&pan/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+ <link href="nav&pan/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css">
+
+<!-- ---------------------------------------------------------------------------- -->
+
+<!-- ------------ navbar , panel & datatable js file ---------------------------- -->
+
+ <script src="nav&pan/js/angular-ui-utils.min.js"></script>
+ <script src="nav&pan/js/angular.min.js"></script>
+ <script src="nav&pan/js/dataTables.bootstrap.min.js"></script>
+ <script src="nav&pan/js/jquery-2.2.4.min.js"></script>
+ <script src="nav&pan/js/jquery.dataTables.min.js"></script>
+ <script src="nav&pan/js/ui-bootstrap-tpls.min.js"></script>
+ <script src="nav&pan/js/bootstrap.min.js"></script>
+ <script src="nav&pan/js/jquery.min.js"></script>
+ <script src="nav&pan/js/jdatatable1.js"></script>
+ <script src="nav&pan/js/jquery.dataTables2.min.js"></script>
+
+<!-- ---------------------------------------------------------------------------- -->
+
+
+
+
+<style>
+
+body
+{
+  background-color:white;
+  font-size:20px;
+}
+
+.navbar 
+{
+  min-height: 45px;
+}
+
+.navbar-brand 
+{
+  padding: 0 35px;
+  height: 45px;
+  line-height: 45px;
+  font-size:30px;
+}
+
+.navbar-toggle 
+{
+  /* (80px - button height 34px) / 2 = 23px */
+  margin-top: 20px;
+  padding: 25px 25px;
+  font-color:white;
+}
+
+@media (min-width: 500px) {
+  .navbar-nav > li > a {
+    /* (80px - line-height of 27px) / 2 = 26.5px */
+    }}
+
+
+
+</style>
+
+
+
+</head>
+
+
+<body>
+
+
+<!-- navbar----------------------------------------------------------------------------------- -->
+
+<nav class="navbar navbar-inverse">
+<div class="container-fluid">
+
+	<!-- ------------------------------------------------------------------------------ -->
+
+    <div class="navbar-header">
+	
+	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+    </button>
+    
+     <a class="navbar-brand" href="#">Asset Management</a>
+	
+	</div>
+	
+	<!-- ------------------------------------------------------------------------------ -->
+	
+	<div id="navbar" class="navbar-collapse collapse">
+	
+	 <ul class="nav navbar-nav navbar-right">
+	 
+	 <li><a href="adminDashboard.html">Home</a></li>
+	 <li><a href="#">About</a></li>
+     <li><a href="adminRequest.html">Requests</a></li>
+     
+     <li><a href="adminComplaint.html">Complaints</a></li>
+     
+     <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Administrator <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="ViewEmployee.html">Employee Profile</a></li>
+            <li><a href="ViewHardware.html">Hardware Details</a></li>
+            <li><a href="ViewSoftware.html">Software Details</a></li>
+            <li><a href="ViewOpSys.html">OS Details</a></li>
+           <!-- <li role="separator" class="divider"></li> --> 
+          </ul>
+      </li>
+     
+     <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Assets <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="adminEmployee.html">Employee</a></li>
+            <li><a href="adminHardware.html">Hardware</a></li>
+            <li><a href="adminSoftware.html">Software</a></li>
+            <li><a href="adminOpSys.html">OS</a></li>
+           <!-- <li role="separator" class="divider"></li> --> 
+          </ul>
+      </li>
+      
+     <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="index.html">Logout <i class="fa fa-sign-out" style="font-size:20px"></i></a></li>
+          </ul>
+      </li>
+      
+	 
+	 </ul>
+	
+	</div>
+	
+	<!-- ------------------------------------------------------------------------------ -->
+	
+</div>
+</nav>
+
+
+
+<!-- panel ------------------------------------------------------------------------------------------ -->
+
+
+
+<div class="container-fluid">
+
+ <div class="panel panel-success" style="width:100%;">
+	
+	<!-- ------------panel heading-------------- -->
+
+	<div class="panel-heading">Add Operating System</div>
+
+    <!-- ------------panel body-------------- -->
+	
+	<div class="panel-body" ></div>	
+	
+	<div class="row">
+        <div class="col-12">
+        
+        <div class="container">
+        
+        <div class="row">
+        
+        <div class="col-xs-12 col-sm-3">
+        
+        </div>
+        
+        <div  class="col-xs-12 col-sm-6">
+        
+        <form action="AddOpSys" method="post" style="border-style:ridge;padding:25px;border-color:lightblue;">
+        
+        
+        <label><b>OS ID</b></label>
+       	<input class="form-control" type="text" placeholder="enter Id" name="osId" required>
+       	
+        <label><b>Type</b></label>
+      <!-- <input class="form-control" type="text" placeholder="enter name" name="softName" required> -->  
+       	
+       	<select class="form-control" name="osType" required>
+       	<option>Select</option>
+       	<option>Windows</option>
+       	<option>Linux</option>
+       	<option>Unix</option>
+       	<option>Mac</option>
+       	<option>Dos</option>
+       	<option>Ubuntu</option>
+       	</select>
+       	 
+        <label><b>Version</b></label>
+        <input class="form-control" type="text" placeholder="enter version" name="osVer" required>
+                
+        <label><b>License Provider</b></label>
+        <!-- <input class="form-control" type="text" placeholder="enter license" name="osLice" required> -->
+        
+        <select class="form-control" name="osLice" required>
+        <option>Select</option>
+        <option>GNU</option>
+        <option>Microsoft</option>
+        <option>Apple</option>
+        <option>ATandT</option>
+        <option>Canonical Ltd</option>
+        <option>IBM</option>
+        </select>
+        
+        
+        
+              <label><b>OS bit</b></label>
+        <input class="form-control" type="text" placeholder="enter bit" name="osBit" required>
+        
+        <label><b>Cost</b></label>
+        <input class="form-control" type="text" placeholder="enter cost ex:paid" name="osCost" required>
+        
+        <label><b>Available</b></label>
+        <input class="form-control" type="text" placeholder="enter quantity" name="osAvl" required>
+               
+        
+        
+        <br><br>
+        <button class="btn btn-info" style="background-color:blue;color:white" type="submit"><i class="fa fa-paper-plane-o"></i> Add to list</button>
+       
+		<!-- <center><input class="btn btn-info" style="background-color:blue;color:white" type="submit"  value="send"></center> -->        
+        
+        </form>
+    
+        
+        </div>
+        
+        <div  class="col-xs-12 col-sm-3">
+        
+        
+        </div>
+        
+        </div>
+        
+        
+         
+
+
+			
+
+
+        </div>
+      </div>
+    </div>
+	
+
+ </div>
+
+</div>
+
+</body>
+</html>
